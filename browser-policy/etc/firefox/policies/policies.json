@@ -1,0 +1,214 @@
+{
+   "policies": {
+      "Homepage": {
+         "URL":"about:home",
+         "Locked":true,
+         "StartPage":"homepage"
+      },
+      "DisablePocket": true,
+      "AppAutoUpdate": false,
+      "SkipTermsOfUse": true,
+      "PromptForDownloadLocation": true,
+      "SearchEngines": {
+        "Add": [
+          {
+            "Name": "Яндекс",
+            "URLTemplate": "https://yandex.ru/search/?text={searchTerms}"
+          },
+          {
+            "Name": "Google",
+            "URLTemplate": "https://www.google.com/search?q=={searchTerms}"
+          }
+        ],
+        "Remove": [
+          "Amazon",
+          "Bing",
+          "Perplexity",
+          "Twitter",
+          "Yahoo"
+        ],
+      "Default": "Яндекс"
+      },
+      "AutofillCreditCardEnabled": false,
+      "DisableFirefoxAccounts": false,
+      "DisableTelemetry": true,
+      "GenerativeAI": {
+         "Enabled": false,
+         "Chatbot": false,
+         "LinkPreviews": false,
+         "TabGroups": false,
+         "Locked": true
+      },
+      "DontCheckDefaultBrowser": true,
+      "NoDefaultBookmarks":true,
+      "EnableTrackingProtection": {
+         "Value": true,
+         "Locked": false,
+         "Cryptomining": true,
+         "Fingerprinting": true,
+         "EmailTracking": true,
+         "Exceptions": [
+            "http://ssl.budgetplan.minfin.ru",
+            "https://eb.cert.roskazna.ru",
+            "https://fzs.roskazna.ru",
+            "https://internet.garant.ru",
+            "https://lk.rosreestr.ru",
+            "https://lkuv.gosuslugi.ru",
+            "https://rosreestr.gov.ru",
+            "https://sc.digital.gov.ru",
+            "https://sobi.cert.roskazna.ru",
+            "https://ssl.mfzr.minfin.ru",
+            "https://www.cryptopro.ru",
+            "https://zakupki.gov.ru"
+         ]
+      },
+      "SanitizeOnShutdown": {
+        "Cache": true,
+        "Cookies": true,
+        "Downloads": true,
+        "FormData": false,
+        "History": false,
+        "Sessions": false,
+        "SiteSettings": false,
+        "OfflineApps": false,
+        "Locked": false
+      },
+      "PopupBlocking": {
+        "Allow": [
+          "http://ssl.budgetplan.minfin.ru",
+          "https://eb.cert.roskazna.ru",
+          "https://fzs.roskazna.ru",
+          "https://internet.garant.ru",
+          "https://lk.rosreestr.ru",
+          "https://lkuv.gosuslugi.ru",
+          "https://rosreestr.gov.ru",
+          "https://sc.digital.gov.ru",
+          "https://sobi.cert.roskazna.ru",
+          "https://ssl.mfzr.minfin.ru",
+          "https://www.cryptopro.ru",
+          "https://zakupki.gov.ru"
+        ],
+        "Default": true,
+        "Locked": false
+      },
+      "DisableFirefoxStudies": true,
+      "NewTabPage":true,
+      "DisplayBookmarksToolbar":true,
+      "ShowHomeButton":true,
+      "Extensions": {
+         "Install":[
+            "https://www.cryptopro.ru/sites/default/files/products/cades/extensions/firefox_cryptopro_extension_latest.xpi",
+            "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
+            "https://ds-plugin.gosuslugi.ru/plugin/upload/assets/distrib/addon-1.2.8-fx.xpi",
+            "https://addons.mozilla.org/firefox/downloads/latest/Госплагин/latest.xpi"
+         ],
+         "Locked":[
+            "ru.cryptopro.nmcades@cryptopro.ru",
+            "uBlock0@raymondhill.net",
+            "pbafkdcnd@ngodfeigfdgiodgnmbgcfha.ru"
+         ]
+      },
+      "3rdparty": {
+        "Extensions": {
+          "uBlock0@raymondhill.net": {
+            "toOverwrite": {
+              "trustedSiteDirectives": [
+                 "chrome-extension-scheme",
+                 "moz-extension-scheme",
+                 "gov.ru",
+                 "roskazna.ru",
+                 "cryptopro.ru",
+                 "minfin.ru",
+                 "gosuslugi.ru",
+                 "rosreestr.ru",
+                 "garant.ru"
+              ]
+            }
+          }
+        }
+      },
+      "SecurityDevices": {
+         "Add": {
+            "p11-kit-trust":"/usr/lib/x86_64-linux-gnu/pkcs11/p11-kit-trust.so"
+         }
+      },
+      "ManagedBookmarks":[
+      {
+        "toplevel_name":"Закладки (Политика)"
+      },
+      {
+        "name":"Единая информационная система",
+        "url":"https://zakupki.gov.ru"
+      },
+      {
+        "name":"Единый портал бюджетной системы РФ",
+        "url":"https://budget.gov.ru"
+      },
+      {
+        "name":"Удостоверяющий центр УФК",
+        "url":"https://fzs.roskazna.ru"
+      },
+      {
+        "children":[
+          {
+            "name":"Проверка создания электронной подписи",
+              "url":"https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html"
+          },
+          {
+            "name":"Список надежных веб-узлов пользователя",
+            "url":"/etc/opt/cprocsp/trusted_sites.html"
+          },
+          {
+                "name":"Тестовый удостоверяющий центр",
+                "url":"https://www.cryptopro.ru/solutions/test-ca"
+          }
+        ],
+        "name":"Крипто Про"
+      },
+      {
+        "children":[
+          {
+            "name":"Ситуационный центр",
+            "url":"https://sc.digital.gov.ru"
+          },
+          {
+            "name":"Личный кабинет участника взаимодействия",
+            "url":"https://lkuv.gosuslugi.ru"
+          }
+        ],
+        "name":"СМЭВ (Система межведомственного электронного взаимодействия)"
+      },
+      {
+        "children":[
+          {
+            "children":[
+              {
+                "name":"Подсистема учёта и отчётности",
+                "url":"https://eb.cert.roskazna.ru"
+              },
+              {
+                "name":"Подсистема финансового контроля",
+                "url":"https://pfk-ap.cert.roskazna.ru"
+              },
+              {
+                "name":"Система обеспечения безопасности информации",
+                "url":"https://sobi.cert.roskazna.ru"
+              }
+            ],
+            "name":"Федеральное казначейство России"
+          },
+          {
+            "children":[
+              {
+                "name":"Подсистема бюджетного планирования",
+                "url":"http://ssl.budgetplan.minfin.ru"
+              }
+            ],
+            "name":"Министерство финансов России"
+          }
+        ],
+        "name":"Электронный бюджет"
+      }
+      ]
+   }
+}

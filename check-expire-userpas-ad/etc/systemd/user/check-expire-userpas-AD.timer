@@ -1,0 +1,10 @@
+[Unit]
+Description=Основной таймер проверки срока истечения действия пароля AD
+
+[Timer]
+OnUnitInactiveSec=24h
+AccuracySec=1m
+Unit=check-expire-userpas-AD.service
+
+[Install]
+WantedBy=timers.target

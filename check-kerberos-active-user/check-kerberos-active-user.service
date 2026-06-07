@@ -1,0 +1,16 @@
+[Unit]
+Description=Проверка актуальности kerberos билета
+After=network.target
+Wants=check-kerberos-active-user.timer
+
+[Service]
+Environment="SCRIPT_RUN_FROM_SYSTEMD=yes"
+Type=oneshot
+
+ExecStart=/usr/local/bin/check-kerberos-active-user.sh
+
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=default.target

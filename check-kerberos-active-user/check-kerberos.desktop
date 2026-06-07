@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/bin/bash -c "systemctl --user import-environment && systemctl --user start check-kerberos-active-user.timer && systemctl --user start check-kerberos-active-user.service"
+Icon=system-run
+Name=Запуск сервиса и таймера проверки актуальности kerberos билета
+Path=
+Terminal=False
+Type=Application

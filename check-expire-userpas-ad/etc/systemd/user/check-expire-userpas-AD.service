@@ -1,0 +1,15 @@
+[Unit]
+Description=Проверка срока истечения действия пароля AD
+After=network.target
+
+[Service]
+Environment="SCRIPT_RUN_FROM_SYSTEMD=yes"
+Type=oneshot
+
+ExecStart=/usr/local/bin/check_expire_userpas_AD.sh
+
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=default.target

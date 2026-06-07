@@ -1,0 +1,134 @@
+{
+   "BackgroundModeEnabled":false,
+   "BrowserSignin": 0,
+   "HomepageIsNewTabPage":true,
+   "HardwareAccelerationModeEnabled":true,
+   "HighEfficiencyModeEnabled":true,
+   "MediaRecommendationsEnabled":false,
+   "BookmarkBarEnabled":true,
+   "MetricsReportingEnabled":false,
+   "UrlKeyedAnonymizedDataCollectionEnabled":false,
+   "ShowHomeButton":true,
+   "SyncDisabled":true,
+   "RemoteAccessHostAllowRemoteSupportConnections":false,
+   "AutomatedPasswordChangeSettings":2,
+   "ClearBrowsingDataOnExitList": [ "cookies_and_other_site_data", "cached_images_and_files"
+   ],
+   "ShowAppsShortcutInBookmarkBar":false,
+   "PopupsAllowedForUrls": [
+      "[*.]gov.ru",
+      "[*.]roskazna.ru",
+      "[*.]cryptopro.ru",
+      "[*.]minfin.ru",
+      "[*.]gosuslugi.ru",
+      "[*.]rosreestr.ru",
+      "[*.]garant.ru"
+   ],
+   "ExtensionInstallForcelist":[
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm;https://clients2.google.com/service/update2/crx",
+      "pbefkdcndngodfeigfdgiodgnmbgcfha;https://clients2.google.com/service/update2/crx",
+      "jabjbhgjaidecageckilhonbggakppme;https://clients2.google.com/service/update2/crx"
+   ],
+   "ExtensionSettings":{
+    "iifchhfnnmpdbibifmljnfjhpififfog":{
+      "update_url":"https://www.cryptopro.ru/sites/default/files/products/cades/extensions/iifchhfnnmpdbibifmljnfjhpififfog_main.crx"
+    }
+  },
+  "3rdparty": {
+    "extensions": {
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm": {
+        "toOverwrite": {
+          "trustedSiteDirectives": [
+            "chrome-extension-scheme",
+            "moz-extension-scheme",
+            "gov.ru",
+            "roskazna.ru",
+            "cryptopro.ru",
+            "minfin.ru",
+            "gosuslugi.ru",
+            "rosreestr.ru",
+            "garant.ru"
+          ]
+        }
+      }
+    }
+  },
+  "ManagedBookmarks":[
+     {
+       "toplevel_name":"Закладки (Политика)"
+     },
+     {
+       "name":"Единая информационная система",
+       "url":"https://zakupki.gov.ru"
+     },
+     {
+       "name":"Единый портал бюджетной системы РФ",
+       "url":"https://budget.gov.ru"
+     },
+     {
+       "name":"Удостоверяющий центр УФК",
+       "url":"https://fzs.roskazna.ru"
+     },
+     {
+       "children":[
+         {
+           "name":"Проверка создания электронной подписи",
+             "url":"https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html"
+         },
+         {
+           "name":"Список надежных веб-узлов пользователя",
+           "url":"/etc/opt/cprocsp/trusted_sites.html"
+         },
+         {
+               "name":"Тестовый удостоверяющий центр",
+               "url":"https://www.cryptopro.ru/solutions/test-ca"
+         }
+       ],
+       "name":"Крипто Про"
+     },
+     {
+       "children":[
+         {
+           "name":"Ситуационный центр",
+           "url":"https://sc.digital.gov.ru"
+         },
+         {
+           "name":"Личный кабинет участника взаимодействия",
+           "url":"https://lkuv.gosuslugi.ru"
+         }
+       ],
+       "name":"СМЭВ (Система межведомственного электронного взаимодействия)"
+     },
+     {
+       "children":[
+         {
+           "children":[
+             {
+               "name":"Подсистема учёта и отчётности",
+               "url":"https://eb.cert.roskazna.ru"
+             },
+             {
+               "name":"Подсистема финансового контроля",
+               "url":"https://pfk-ap.cert.roskazna.ru"
+             },
+             {
+               "name":"Система обеспечения безопасности информации",
+               "url":"https://sobi.cert.roskazna.ru"
+             }
+           ],
+           "name":"Федеральное казначейство России"
+         },
+         {
+           "children":[
+             {
+               "name":"Подсистема бюджетного планирования",
+               "url":"http://ssl.budgetplan.minfin.ru"
+             }
+           ],
+           "name":"Министерство финансов России"
+         }
+       ],
+       "name":"Электронный бюджет"
+     }
+     ]
+}

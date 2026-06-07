@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/bin/bash -c "systemctl --user import-environment && sleep 10 && systemctl --user start check-expire-userpas-AD.timer && systemctl --user start check-expire-userpas-AD.service"
+Icon=system-run
+Name=Запуск сервиса и таймера проверки срока истечения действия пароля AD.
+Path=
+Terminal=False
+Type=Application

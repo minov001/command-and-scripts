@@ -1,0 +1,10 @@
+[Unit]
+Description=Таймер проверки актуальности kerberos билета
+
+[Timer]
+OnUnitInactiveSec=10m
+AccuracySec=1m
+Unit=check-kerberos-active-user.service
+
+[Install]
+WantedBy=timers.target

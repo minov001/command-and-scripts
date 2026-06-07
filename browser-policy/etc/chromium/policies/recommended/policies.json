@@ -1,0 +1,17 @@
+{
+  "AlwaysOpenPdfExternally":true,
+  "AutofillAddressEnabled":true,
+  "AutofillCreditCardEnabled":false,
+  "PromptForDownloadLocation":true,
+  "PasswordManagerEnabled":true,
+  "RestoreOnStartup":5,
+  "SearchSuggestEnabled":true,
+  "DefaultSearchProviderEnabled":true,
+  "DefaultSearchProviderSearchURL":"https://yandex.ru/search/?text={searchTerms}",
+  "DefaultSearchProviderName":"Яндекс",
+  "DefaultSearchProviderAlternateURLs": [
+      "https://www.google.com/search?q=={searchTerms}"
+  ],
+  "DefaultSearchProviderContextMenuAccessAllowed":true,
+  "TranslateEnabled":false
+}
