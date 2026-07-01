@@ -1,5 +1,5 @@
 {
-  "AlwaysOpenPdfExternally":true,
+  "AlwaysOpenPdfExternally":false,
   "AutofillAddressEnabled":true,
   "AutofillCreditCardEnabled":false,
   "PromptForDownloadLocation":true,

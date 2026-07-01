@@ -1,6 +1,7 @@
 {
    "BackgroundModeEnabled":false,
    "BrowserSignin": 0,
+   "FeedbackSurveysEnabled":false,
    "HomepageIsNewTabPage":true,
    "HardwareAccelerationModeEnabled":true,
    "HighEfficiencyModeEnabled":true,
@@ -14,6 +15,15 @@
    "AutomatedPasswordChangeSettings":2,
    "ClearBrowsingDataOnExitList": [ "cookies_and_other_site_data", "cached_images_and_files"
    ],
+   "BrowsingDataLifetime": [
+     {
+         "data_types": [
+               "browsing_history",
+               "download_history"
+             ],
+         "time_to_live_in_hours": 240
+     }
+   ],
    "ShowAppsShortcutInBookmarkBar":false,
    "PopupsAllowedForUrls": [
       "[*.]gov.ru",
@@ -25,110 +35,132 @@
       "[*.]garant.ru"
    ],
    "ExtensionInstallForcelist":[
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm;https://clients2.google.com/service/update2/crx",
-      "pbefkdcndngodfeigfdgiodgnmbgcfha;https://clients2.google.com/service/update2/crx",
-      "jabjbhgjaidecageckilhonbggakppme;https://clients2.google.com/service/update2/crx"
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm;https://clients2.google.com/service/update2/crx"
    ],
    "ExtensionSettings":{
-    "iifchhfnnmpdbibifmljnfjhpififfog":{
-      "update_url":"https://www.cryptopro.ru/sites/default/files/products/cades/extensions/iifchhfnnmpdbibifmljnfjhpififfog_main.crx"
-    }
-  },
-  "3rdparty": {
-    "extensions": {
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm": {
-        "toOverwrite": {
-          "trustedSiteDirectives": [
-            "chrome-extension-scheme",
-            "moz-extension-scheme",
-            "gov.ru",
-            "roskazna.ru",
-            "cryptopro.ru",
-            "minfin.ru",
-            "gosuslugi.ru",
-            "rosreestr.ru",
-            "garant.ru"
-          ]
-        }
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm":{
+         "toolbar_pin":"default_unpinned",
+         "update_url":"https://clients2.google.com/service/update2/crx",
+         "override_update_url": true
+      },
+      "iifchhfnnmpdbibifmljnfjhpififfog":{
+         "installation_mode": "force_installed",
+         "update_url":"file:///etc/chromium/extension/update.xml",
+         "override_update_url": true
+      },
+      "jabjbhgjaidecageckilhonbggakppme":{
+         "installation_mode": "normal_installed",
+         "update_url":"https://clients2.google.com/service/update2/crx",
+         "toolbar_pin":"default_unpinned",
+         "override_update_url": true
+      },
+      "pbefkdcndngodfeigfdgiodgnmbgcfha":{
+         "installation_mode": "normal_installed",
+         "update_url":"https://clients2.google.com/service/update2/crx",
+         "toolbar_pin":"default_unpinned",
+         "override_update_url": true
+      },
+      "pfhgbfnnjiafkhfdkmpiflachepdcjod":{
+         "installation_mode": "force_installed",
+         "update_url":"https://clients2.google.com/service/update2/crx",
+         "override_update_url": true
       }
-    }
-  },
-  "ManagedBookmarks":[
-     {
-       "toplevel_name":"Закладки (Политика)"
-     },
-     {
-       "name":"Единая информационная система",
-       "url":"https://zakupki.gov.ru"
-     },
-     {
-       "name":"Единый портал бюджетной системы РФ",
-       "url":"https://budget.gov.ru"
-     },
-     {
-       "name":"Удостоверяющий центр УФК",
-       "url":"https://fzs.roskazna.ru"
-     },
-     {
-       "children":[
-         {
-           "name":"Проверка создания электронной подписи",
-             "url":"https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html"
-         },
-         {
-           "name":"Список надежных веб-узлов пользователя",
-           "url":"/etc/opt/cprocsp/trusted_sites.html"
-         },
-         {
-               "name":"Тестовый удостоверяющий центр",
-               "url":"https://www.cryptopro.ru/solutions/test-ca"
+   },
+   "3rdparty": {
+     "extensions": {
+       "cjpalhdlnbpafiamejdnhcphjbkeiagm": {
+         "toOverwrite": {
+           "trustedSiteDirectives": [
+             "chrome-extension-scheme",
+             "moz-extension-scheme",
+             "gov.ru",
+             "roskazna.ru",
+             "cryptopro.ru",
+             "minfin.ru",
+             "gosuslugi.ru",
+             "rosreestr.ru",
+             "garant.ru"
+           ]
          }
-       ],
-       "name":"Крипто Про"
-     },
-     {
-       "children":[
-         {
-           "name":"Ситуационный центр",
-           "url":"https://sc.digital.gov.ru"
-         },
-         {
-           "name":"Личный кабинет участника взаимодействия",
-           "url":"https://lkuv.gosuslugi.ru"
-         }
-       ],
-       "name":"СМЭВ (Система межведомственного электронного взаимодействия)"
-     },
-     {
-       "children":[
-         {
-           "children":[
-             {
-               "name":"Подсистема учёта и отчётности",
-               "url":"https://eb.cert.roskazna.ru"
-             },
-             {
-               "name":"Подсистема финансового контроля",
-               "url":"https://pfk-ap.cert.roskazna.ru"
-             },
-             {
-               "name":"Система обеспечения безопасности информации",
-               "url":"https://sobi.cert.roskazna.ru"
-             }
-           ],
-           "name":"Федеральное казначейство России"
-         },
-         {
-           "children":[
-             {
-               "name":"Подсистема бюджетного планирования",
-               "url":"http://ssl.budgetplan.minfin.ru"
-             }
-           ],
-           "name":"Министерство финансов России"
-         }
-       ],
-       "name":"Электронный бюджет"
+       }
      }
-     ]
+   },
+   "ManagedBookmarks":[
+      {
+        "toplevel_name":"Закладки (Политика)"
+      },
+      {
+        "name":"Единая информационная система",
+        "url":"https://zakupki.gov.ru"
+      },
+      {
+        "name":"Единый портал бюджетной системы РФ",
+        "url":"https://budget.gov.ru"
+      },
+      {
+        "name":"Удостоверяющий центр УФК",
+        "url":"https://fzs.roskazna.ru"
+      },
+      {
+        "children":[
+          {
+            "name":"Проверка создания электронной подписи",
+              "url":"https://www.cryptopro.ru/sites/default/files/products/cades/demopage/cades_bes_sample.html"
+          },
+          {
+            "name":"Список надежных веб-узлов пользователя",
+            "url":"/etc/opt/cprocsp/trusted_sites.html"
+          },
+          {
+                "name":"Тестовый удостоверяющий центр",
+                "url":"https://www.cryptopro.ru/solutions/test-ca"
+          }
+        ],
+        "name":"Крипто Про"
+      },
+      {
+        "children":[
+          {
+            "name":"Ситуационный центр",
+            "url":"https://sc.digital.gov.ru"
+          },
+          {
+            "name":"Личный кабинет участника взаимодействия",
+            "url":"https://lkuv.gosuslugi.ru"
+          }
+        ],
+        "name":"СМЭВ (Система межведомственного электронного взаимодействия)"
+      },
+      {
+        "children":[
+          {
+            "children":[
+              {
+                "name":"Подсистема учёта и отчётности",
+                "url":"https://eb.cert.roskazna.ru"
+              },
+              {
+                "name":"Подсистема финансового контроля",
+                "url":"https://pfk-ap.cert.roskazna.ru"
+              },
+              {
+                "name":"Система обеспечения безопасности информации",
+                "url":"https://sobi.cert.roskazna.ru"
+              }
+            ],
+            "name":"Федеральное казначейство России"
+          },
+          {
+            "children":[
+              {
+                "name":"Подсистема бюджетного планирования",
+                "url":"http://ssl.budgetplan.minfin.ru"
+              }
+            ],
+            "name":"Министерство финансов России"
+          }
+        ],
+        "name":"Электронный бюджет"
+      }
+      ]
 }
