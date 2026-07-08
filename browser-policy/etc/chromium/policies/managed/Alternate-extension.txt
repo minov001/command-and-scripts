@@ -1,0 +1,43 @@
+   "ExtensionInstallForcelist":[
+      "ddkjiahejlhfcafbddmgiahcphecmpfh;https://clients2.google.com/service/update2/crx"
+   ],
+   "ExtensionSettings":{
+      "ddkjiahejlhfcafbddmgiahcphecmpfh":{
+         "toolbar_pin":"default_unpinned",
+         "update_url":"https://clients2.google.com/service/update2/crx",
+         "override_update_url": true
+      },
+      "jabjbhgjaidecageckilhonbggakppme":{
+         "installation_mode": "normal_installed",
+         "update_url":"https://clients2.google.com/service/update2/crx",
+         "toolbar_pin":"default_unpinned",
+         "override_update_url": true
+      },
+      "pfhgbfnnjiafkhfdkmpiflachepdcjod":{
+         "installation_mode": "force_installed",
+         "update_url":"https://clients2.google.com/service/update2/crx",
+         "override_update_url": true
+      }
+   },
+   "3rdparty": {
+     "extensions": {
+       "ddkjiahejlhfcafbddmgiahcphecmpfh": {
+         "defaultFiltering": "complete",
+         "noFiltering": [
+           "chrome-extension-scheme",
+           "moz-extension-scheme",
+           "gov.ru",
+           "roskazna.ru",
+           "cryptopro.ru",
+           "minfin.ru",
+           "gosuslugi.ru",
+           "rosreestr.ru",
+           "garant.ru"
+         ]
+       }
+     }
+   },
+
+"_comment": "В данном варианте оставлены только расширения манифеста 3 (Ublock Origin lite, Госплагин, КриптоПро)",
+"_comment": "https://github.com/uBlockOrigin/uBOL-home/wiki/Managed-settings",
+"_comment": "defaultFiltering: none, basic, optimal, complete",
