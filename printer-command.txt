@@ -1,0 +1,37 @@
+#Показать IPP принтеры (адреса подключения)
+sudo ippfind | sort -u
+
+#Показать IPPS принтеры (адреса подключения)
+sudo ippfind _ipps._tcp | sort -u
+
+#Поиск драйверов (если не использовать универсальный драйвер IPP everywhere). Пример для Pantum
+sudo lpinfo -m | grep -i "5100FDN"
+
+#Добавление принтера
+sudo lpadmin -p "Имя_принтера_без_пробелов" -E -v "Адрес-принтера" -m "Используемый-драйвер"
+
+#Включить модуль дуплекса (необходимо для двухсторонней печати)
+sudo lpadmin -p "Имя_принтера_без_пробелов" -o Duplexer=True -o HPOption_Duplexer=True
+
+#Выставить принтер по умолчанию (для себя)
+lpoptions -d "Имя_принтера_без_пробелов"
+
+#Выставить принтер по умолчанию для всех
+sudo lpadmin -d "Имя_принтера_без_пробелов"
+
+#Смена размера страницы по умолчанию на A4, а тип бумаги обычная
+sudo lpadmin -p "Имя_принтера_без_пробелов" -o PageSize=A4 -o media=A4 -o MediaType=Plain
+
+#Смена драйвера у подключенного принтера
+sudo lpadmin -p "Имя_принтера_без_пробелов" -m "Драйвер"
+
+#Запуск всех остановленных принтеров
+for printer in $(LC_ALL=C lpstat -p | grep -Ei "disabled" | awk '{print $2}'); do cupsenable $printer; done
+
+#Создать резервную копию настроек принтеров (будет создан архив на рабочем столе):
+sudo tar -czf ./home/$SUDO_USER/Desktop/cups.tar.gz -C /etc/cups ppd printers.conf printers.conf.O
+
+#Восстановить настройки принтеров
+sudo rm -v -fR "/etc/cups/ppd"
+sudo tar --overwrite -vxzpf ./cups.tar.gz -C /etc/cups/
+sudo systemctl restart cups

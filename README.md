@@ -24,6 +24,8 @@ ____
 11. [Conky](#conky)
 12. [Double commander](#doublecmd)
 13. [Browser policy (групповые политики для браузера)](#browser-policy)
+14. [list_scan.sh (поиск сканеров airscan в сети)](#list_scan)
+15. [printer-command.txt](#printer_command)
 
 ____
 ### Описание {#описание}
@@ -261,3 +263,46 @@ ____
 ### Browser policy (групповые политики для браузера) {#browser-policy}
 
 Пример политик для chromium и firefox. Из особенностей: настроен белый список ublock origin.
+
+### list_scan.sh (поиск сканеров airscan в сети) {#list_scan}
+
+Скрипт выводит найденные сканеры из вывода `airscan-discover` в формате:
+
+"Имя сканера (Bonjour domain)" = Адрес-подключения(ip меняется на Bonjour domain), протокол
+
+Пример:
+
+"PrintServer1.local" = http://PrintServer1.local:631/eSCL/, eSCL
+
+Полученное значение добавляется в раздел `devices` в файле `/etc/sane.d/airscan.conf`. Это позволяет задать статичный сканер у которого не будет меняться ссылка.
+
+Дополнительно в файле можно отключить автопоиск сканеров по протоколу `airscan`
+
+```
+[options]
+discovery = disable
+```
+
+Требуемые исполняемые файлы (ищите пакеты содержащие их в вашем дистрибутиве): `ippfind`, `airscan-discover`
+
+Запуск:
+
+- Запустите `avahi-daemon`
+
+```
+systemctl enable avahi-daemon.service
+```
+
+```
+systemctl start avahi-daemon.service
+```
+
+- Запустите скрипт:
+
+```
+./list_scan.sh | grep -Ev "$^" | grep -v '\[fe80' | sort -u
+```
+
+### printer-command.txt {#printer_command}
+
+Различные команды для управления принтерами
